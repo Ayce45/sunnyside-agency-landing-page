@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: "Barlow",
+                        title: "Fraunces"
+                    },
+                    screens: {
+                        d: "1440px",
+                    },
+                },
+            },
+        };
+    </script>
+    <script async src="script.js"></script>
+    <style type="text/tailwindcss">
+        @font-face {
+            font-family: "Barlow";
+            font-weight: 600;
+            src: url("fonts/Barlow-SemiBold.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Fraunces";
+            font-weight: 700;
+            src: url("fonts/Fraunces-Bold.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Fraunces";
+            font-weight: 800;
+            src: url("fonts/Fraunces-ExtraBold.ttf") format("truetype");
+        }
+
+        .attribution {
+            display: none;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+
+        body {
+            font-size: 18px;
+        }
+
+        .barred {
+            @apply relative
+        }
+
+        .barred:before {
+            content: '';
+            @apply w-full h-[8px] block absolute bottom-[-2px] right-1/2 transform translate-x-1/2 z-[-1] rounded;
+        }
+
+        .barred-yellow:before {
+            @apply bg-[#FEF3B6]
+        }
+
+        .barred-red:before {
+            @apply bg-[#FFDBD3]
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+
+            border-top: 20px solid white;
+        }
+    </style>
+</head>
+<body>
+<div class="h-full">
+    <div class="h-full w-full relative">
+        <img class="d:hidden w-full" src="images/mobile/image-header.jpg" alt="Image header">
+        <img class="hidden d:block" src="images/desktop/image-header.jpg" alt="Image header">
+        <img class="absolute top-6 left-6 pointer d:top-12 d:left-12 d:h-8" src="images/logo.svg" alt="logo">
+        <img id="menu-mobile" class="d:hidden absolute top-6 right-6 opacity-50" src="images/icon-hamburger.svg"
+             alt="hamburger">
+        <nav id="nav-mobile"
+             class="hidden bg-[#FFFBF8] absolute top-24 right-1/2 transform translate-x-1/2 w-[330px] z-20">
+            <div class="relative w-full h-full">
+                <span class="triangle absolute top-[-10px] right-[-10px] transform rotate-[90deg]"></span>
+                <ul class="flex flex-col items-center space-y-8 py-10 text-[#797783] text-xl">
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Projects</li>
+                    <li><a class="rounded-full bg-[#FBD601] py-4 px-6 text-black font-title uppercase text-sm" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="hidden d:block absolute top-12 right-12">
+            <ul class="flex items-center space-x-8 text-white">
+                <li>About</li>
+                <li>Services</li>
+                <li>Projects</li>
+                <li><a class="rounded-full bg-white py-4 px-6 text-black font-title uppercase text-sm"
+                       href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="font-title text-4xl d:text-6xl d:w-full absolute top-1/4 right-1/2 transform translate-x-1/2 uppercase text-white text-center leading-[55px] tracking-widest">
+            We are creatives</h1>
+        <img class="absolute top-2/4 right-1/2 transform translate-x-1/2" src="images/icon-arrow-down.svg"
+             alt="arrow down">
+    </div>
+    <img class="d:hidden w-full" src="images/mobile/image-transform.jpg" alt="Image transform">
+    <section class="bg-[#FFFBF8] flex d:grid d:grid-cols-2 justify-center">
+        <div class="px-6 py-16 d:py-[150px] d:px-[150px]">
+            <h2 class="font-title text-center d:text-left text-4xl">Transform your brand</h2>
+            <p class="text-[#807E88] mt-3 d:mt-6 text-center d:text-left">We are a full-service creative agency
+                specializing in helping brands
+                grow fast.
+                Engage your clients through compelling visuals that do most of the marketing for you.</p>
+            <div class="text-center d:text-left mt-6 d:mt-12">
+                <a class="barred barred-yellow uppercase font-title font-extrabold tracking-wide text-[16px] z-20"
+                   href="#">Learn
+                    more</a>
+            </div>
+        </div>
+        <img class="hidden d:block w-full" src="images/desktop/image-transform.jpg" alt="Image transform">
+    </section>
+    <img class="d:hidden w-full" src="images/mobile/image-stand-out.jpg" alt="stand-out">
+    <section class="bg-[#FFFBF8] flex d:grid d:grid-cols-2 justify-center">
+        <img class="hidden d:block w-full" src="images/desktop/image-stand-out.jpg" alt="Image transform">
+        <div class="px-6 py-16 d:py-[150px] d:px-[150px]">
+            <h2 class="font-title text-center d:text-left text-4xl">Stand out to the right audience</h2>
+            <p class="text-[#807E88] mt-3 d:mt-6 text-center d:text-left">Using a collaborative formula of designers,
+                researchers,
+                photographers, videographers, and copywriters, we’ll build and
+                extend your brand in digital places.</p>
+            <div class="text-center d:text-left mt-6 d:mt-12">
+                <a class="barred barred-red uppercase font-title font-extrabold tracking-wide text-[16px] z-20"
+                   href="#">Learn
+                    more</a>
+            </div>
+        </div>
+    </section>
+    <section class="d:grid d:grid-cols-2">
+        <div class="relative">
+            <img class="d:hidden w-full" src="images/mobile/image-graphic-design.jpg" alt="Graphic Design">
+            <img class="hidden d:block w-full" src="images/desktop/image-graphic-design.jpg" alt="Graphic Design">
+            <h2 class="text-[#25574E] font-title text-center text-3xl absolute bottom-[180px] right-1/2 transform translate-x-1/2 w-full">
+                Graphic design</h2>
+            <p class="w-full text-[#2D6A5B] mt-3 text-center absolute bottom-12 px-6 d:px-40">Great design makes you memorable.
+                We
+                deliver
+                artwork that underscores your brand message and captures potential clients’
+                attention.</p>
+        </div>
+        <div class="relative">
+            <img class="d:hidden w-full" src="images/mobile/image-photography.jpg" alt="Photography">
+            <img class="hidden d:block w-full" src="images/desktop/image-photography.jpg" alt="Photography">
+            <h2 class="text-[#25574E] font-title text-center text-3xl absolute bottom-[180px] right-1/2 transform translate-x-1/2 w-full">
+                Photography</h2>
+            <p class="w-full text-[#2D6A5B] mt-3 text-center absolute bottom-12 px-6 d:px-40">Increase your credibility by
+                getting the
+                most
+                stunning, high-quality photos that improve your business image.
+            </p>
+        </div>
+    </section>
+    <section class="px-6 py-16 d:py-32 d:px-32 bg-[#FFFBF8]">
+        <h2 class="text-[#A1A2A3] uppercase text-center font-title tracking-widest">Client testimonials</h2>
+        <div class="d:grid d:grid-cols-3">
+            <div class="mt-16 flex flex-col items-center d:px-5">
+                <img class="rounded-full h-[72px]" src="images/image-emily.jpg" alt="Emily">
+                <p class="mt-6 d:mt-16 text-center text-[#5E6267]">We put our trust in Sunnyside and they delivered, making sure
+                    our
+                    needs were met and deadlines were
+                    always hit.
+                </p>
+                <span class="mt-6 d:mt-16 font-title font-extrabold">Emily R.</span>
+                <span class="text-[#AFAEAC] text-sm mt-2">Marketing Director</span>
+            </div>
+            <div class="mt-16 flex flex-col items-center d:px-5">
+                <img class="rounded-full h-[72px]" src="images/image-thomas.jpg" alt="Thomas">
+                <p class="mt-6 d:mt-16 text-center text-[#5E6267]">Sunnyside’s enthusiasm coupled with their keen
+                    interest in our
+                    brand’s success made it a satisfying and enjoyable
+                    experience.
+                </p>
+                <span class="mt-6 d:mt-16 font-title font-extrabold">Thomas S.</span>
+                <span class="text-[#AFAEAC] text-sm mt-2">Chief Operating Officer</span>
+            </div>
+            <div class="mt-16 flex flex-col items-center d:px-5">
+                <img class="rounded-full h-[72px]" src="images/image-jennie.jpg" alt="Jennie F.">
+                <p class="mt-6 d:mt-16 text-center text-[#5E6267]">Incredible end result! Our sales increased over 400% when we
+                    worked with Sunnyside. Highly recommended!
+
+                </p>
+                <span class="mt-6 d:mt-16 font-title font-extrabold">Jennie F.</span>
+                <span class="text-[#AFAEAC] text-sm mt-2">Business Owner</span>
+            </div>
+        </div>
+    </section>
+    <section class="grid grid-cols-2 d:grid-cols-4 grid-rows-2 d:grid-rows-1">
+        <img class="w-full" src="images/mobile/image-gallery-milkbottles.jpg" alt="gallery-milkbottles">
+        <img class="w-full" src="images/mobile/image-gallery-orange.jpg" alt="gallery-orange">
+        <img class="w-full" src="images/mobile/image-gallery-cone.jpg" alt="gallery-orange">
+        <img class="w-full" src="images/mobile/image-gallery-sugar-cubes.jpg" alt="gallery-orange">
+    </section>
+    <footer class="bg-[#90D4C5] py-24 flex flex-col items-center px-12">
+        <img class="h-8" src="images/logo-footer.svg" alt="Logo Footer">
+        <nav class="flex items-center justify-center mt-12 ">
+            <ul class="flex space-x-10 w-full text-[#4E9283]">
+                <li>About</li>
+                <li>Services</li>
+                <li>Projects</li>
+            </ul>
+        </nav>
+        <ul class="flex space-x-8 mt-24 px-12">
+            <li><img src="images/icon-facebook.svg" alt="facebook"></li>
+            <li><img src="images/icon-instagram.svg" alt="instagram"></li>
+            <li><img src="images/icon-twitter.svg" alt="twitter"></li>
+            <li><img src="images/icon-pinterest.svg" alt="pinterest"></li>
+        </ul>
+    </footer>
+</div>
+
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+</div>
+</body>
+</html>
